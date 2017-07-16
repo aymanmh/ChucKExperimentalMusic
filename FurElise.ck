@@ -116,7 +116,7 @@ a = (2)1/12 = the twelfth root of 2 = the number which when multiplied by itself
     // set the A above middle C  A4=440.0Hz
     440.0 => float A4;
     A4 => float f0;
-    2.0,1.0/12.0 => float n;
+    1.0/12.0 => float n;
     Math.pow(2.0,n)  => float a;
     
     f0 * Math.pow(a,halfSteps) => float result;
