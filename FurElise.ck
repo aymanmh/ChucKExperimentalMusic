@@ -1,4 +1,4 @@
-//simpel Fur Elise
+//simple Fur Elise
 
 //will choose a percution flute
 PercFlut myFlute => dac;
