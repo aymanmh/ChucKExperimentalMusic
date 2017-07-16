@@ -1,8 +1,8 @@
 //simple Fur Elise
 
-//will choose a percution flute
+//will choose a percussion flute
 PercFlut myFlute => dac;
-//Use one octave higher than middle C: C5,D5,etc...
+//Use one octave higher than middle C: C5,D5,etc... , the function that generate notes are below.
 440.0 => float A4;
 getNoteFreq(2) => float B4;
 getNoteFreq(3) => float C5;
@@ -71,7 +71,7 @@ for ( i ; i < 24; 1 +=> i )
 {
     FurEliseScoreMelody3[i] => myFlute.freq;
   
-     if(i == 3 || i==7 || i==11 || i == 15 || i==19 || i==23) //play the 8th & 15th notes longer
+     if(i == 3 || i==7 || i==11 || i == 15 || i==19 || i==23) //play these notes longer
     {       
         myFlute.noteOn(velocity);
         900::ms=> now;
