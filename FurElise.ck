@@ -2,7 +2,7 @@
 
 //will choose a percussion flute
 PercFlut myFlute => dac;
-//Use one octave higher than middle C: C5,D5,etc... , the function that generate notes are below.
+//Use one octave higher than middle C: C5,D5,etc... , the function that generatea notes is below.
 440.0 => float A4;
 getNoteFreq(2) => float B4;
 getNoteFreq(3) => float C5;
@@ -10,7 +10,7 @@ getNoteFreq(5) => float D5;
 getNoteFreq(6) => float Ds5; //s= sharp, can't use the # in the variable's name
 getNoteFreq(7) => float E5;
 getNoteFreq(8) => float F5;
-//this a simplified version of Fur Elise, i divided the melody into three sections:
+//this is a simplified version of Fur Elise, i divided the melody into three sections:
 [ E5, Ds5, E5,Ds5, E5, B4,D5,C5,A4 ] @=> float FurEliseScoreMelody1[];
 [ A4,A4,A4,B4,B4, B4,B4,C5] @=> float FurEliseScoreMelody2[];
 [ A4,A4,A4,B4,B4,C5,B4,A4,B4,C5,D5,E5, E5,F5,E5,D5, D5,E5,D5,C5, C5,D5,C5,B4] @=> float FurEliseScoreMelody3[];
