@@ -15,6 +15,10 @@ getNoteFreq(8) => float F5;
 [ A4,A4,A4,B4,B4, B4,B4,C5] @=> float FurEliseScoreMelody2[];
 [ A4,A4,A4,B4,B4,C5,B4,A4,B4,C5,D5,E5, E5,F5,E5,D5, D5,E5,D5,C5, C5,D5,C5,B4] @=> float FurEliseScoreMelody3[];
 
+300::ms => dur sixteenthNote; //our sixteenth note is 300 ms duration, so tempo is 50bpm
+2::sixteenthNote => dur eighthNote;
+eighthNote+sixteenthNote => dur dottedEighthNote;
+
 0 => int i;
 0.8 => float velocity; //defines how loud the note is.
 0.0 => float riseFactor;//use this to make the sound rise in the first section below
@@ -25,12 +29,12 @@ for ( i ; i < 9; 1 +=> i )
     if(i == 8) //last note is longer
     {
         myFlute.noteOn(velocity/2.0 + riseFactor);
-        600::ms=> now;
+        eighthNote=> now;
     }
     else
     {
         myFlute.noteOn(velocity/2.0 + riseFactor);
-        300::ms=> now;
+        sixteenthNote=> now;
     }
 }
 
@@ -39,15 +43,15 @@ for ( i ; i < 8; 1 +=> i )
 {
     FurEliseScoreMelody2[i] => myFlute.freq;
 
-    if(i == 3 || i == 7) //play these note longer
+    if(i == 3 || i == 7) //play these notes longer
     {        
         myFlute.noteOn(velocity);
-        900::ms=> now;
+        dottedEighthNote=> now;
     }
     else 
     {
         myFlute.noteOn(velocity);
-        300::ms=> now;
+        sixteenthNote=> now;
     }
 }
 0 => i;
@@ -57,12 +61,12 @@ for ( i ; i < 9; 1 +=> i )
     if(i == 8) //last note is longer
     {
         myFlute.noteOn(velocity);
-        600::ms=> now;
+        eighthNote=> now;
     }
     else
     {
         myFlute.noteOn(velocity);
-        300::ms=> now;
+        sixteenthNote=> now;
     }
 }
 
@@ -74,12 +78,12 @@ for ( i ; i < 24; 1 +=> i )
      if(i == 3 || i==7 || i==11 || i == 15 || i==19 || i==23) //play these notes longer
     {       
         myFlute.noteOn(velocity);
-        900::ms=> now;
+        dottedEighthNote=> now;
     }
     else 
     {
         myFlute.noteOn(velocity);
-        300::ms=> now;
+        sixteenthNote=> now;
     }
 }
 
